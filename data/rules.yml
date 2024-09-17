@@ -1,0 +1,45 @@
+
+version: "3.1"
+
+rules:
+  - rule: Handle Goodbye
+    steps:
+      - action: utter_ask_anything_else
+      - intent: deny
+      - action: utter_goodbye
+
+  - rule : initial step
+    steps:
+      - action: utter_ask_anything_else
+      - intent: affirm
+      - action: utter_greet
+
+  - rule: Say 'I am a bot' anytime the user challenges
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+
+  - rule: Handle Anything Else
+    steps:
+      - action: utter_ask_anything_elseS
+      - intent: affirm
+      - action: utter_greet
+
+  - rule: Handle satisfaction and ask for suggestions if denied
+    steps:
+      - action: utter_ask_satisfaction
+      - intent: deny
+      - action: utter_suggestions
+      - action: utter_ask_anything_else
+
+
+  - rule: Handle satisfaction and follow up if affirmed
+    steps:
+      - action: utter_ask_satisfaction
+      - intent: affirm
+      - action: utter_ask_anything_else
+  
+  - rule: Activate fallback action
+    steps:
+      - intent: nlu_fallback
+      - action: action_default_fallback

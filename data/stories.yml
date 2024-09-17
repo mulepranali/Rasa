@@ -1,0 +1,161 @@
+version: "3.1"
+
+stories:
+  - story: greet and provide options
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - story: access issues flow
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: access_issues
+      - action: utter_access_issues
+      - active_loop: access_issues_form
+
+  - story: database
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: database
+      - action: utter_database
+
+  - story: User asks for NSE data
+    steps:
+      - intent: ask_nse_data
+      - action: action_scrape_nifty_data
+      - action: utter_ask_satisfaction
+      - intent: affirm
+      - action: utter_ask_anything_else
+      - intent: deny
+      - action: utter_goodbye
+      - intent: deny
+      - action: utter_suggestions
+      - action: utter_ask_anything_else
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: status flow
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: status
+      - action: utter_status
+      - action: utter_ask_satisfaction
+      - intent: affirm
+      - action: utter_ask_anything_else
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: hive query flow
+    steps:
+      - intent: access_issues
+      - action: utter_access_issues
+      - intent: hive_query
+      - action: utter_hive_query
+
+  - story: firewall request flow
+    steps:
+      - intent: access_issues
+      - action: utter_access_issues
+      - intent: firewall_request
+      - action: utter_firewall_request
+      - action: utter_ask_satisfaction
+      - intent: affirm
+      - action: utter_ask_anything_else
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: artifact flow
+    steps:
+      - intent: access_issues
+      - action: utter_access_issues
+      - intent: artifact
+      - action: utter_artifact 
+      - action: utter_ask_satisfaction
+      - intent: affirm
+      - action: utter_ask_anything_else
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: eep flow
+    steps:
+      - intent: access_issues
+      - action: utter_access_issues
+      - intent: eep
+      - action: utter_eep 
+      - action: utter_ask_satisfaction
+      - intent: affirm
+      - action: utter_ask_anything_else
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: desktop flow
+    steps:
+      - intent: access_issues
+      - action: utter_access_issues
+      - intent: hive_query
+      - action: utter_hive_query
+      - intent: desktop
+      - action: utter_desktop 
+      - action: utter_ask_satisfaction
+      - intent: affirm
+      - action: utter_ask_anything_else
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: laptop flow
+    steps:
+      - intent: access_issues
+      - action: utter_access_issues
+      - intent: hive_query
+      - action: utter_hive_query
+      - intent: laptop
+      - action: utter_laptop
+      - action: utter_ask_satisfaction
+      - intent: affirm
+      - action: utter_ask_anything_else
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: get all employees
+    steps:
+      - intent: get_employees
+      - action: action_get_employees
+      - action: utter_ask_anything_else
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: get ETL employees
+    steps:
+      - intent: get_etl_employees
+      - action: action_get_etl_employees  
+      - action: utter_ask_satisfaction
+      - intent: affirm
+      - action: utter_ask_anything_else
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: Handle satisfaction and follow up if affirmed
+    steps:
+      - action: utter_ask_satisfaction
+      - intent: affirm
+      - action: utter_ask_anything_else
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: Handle satisfaction and suggestions if denied
+    steps:
+      - action: utter_ask_satisfaction
+      - intent: deny
+      - action: utter_suggestions
+      - action: utter_ask_anything_else
+      - intent: deny
+      - action: utter_goodbye
+  
+  - story: Fallback
+    steps:
+      - intent: nlu_fallback
+      - action: action_default_fallback
+

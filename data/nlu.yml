@@ -1,0 +1,164 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hi
+    - hey
+    - hello
+    - h 
+    - Holla
+    - H
+
+- intent: access_issues
+  examples: |
+    - Access issues
+    - I have access issues
+    - Access problem
+    - A
+
+- intent: status
+  examples: |
+    - Status
+    - Check status
+    - What's the status
+    - B
+
+- intent: database
+  examples: |
+    - get etl data
+    - department count
+    - get datawarehouse data
+    - C
+    
+
+- intent: ask_nse_data
+  examples: |
+    - Can you provide the latest NSE data?
+    - Show me the Nifty index data
+    - What's the Nifty data for today?
+    - I need the latest Nifty index values
+    - Can I see the real-time NSE data?
+    - D
+    
+
+- intent: hive_query
+  examples: |
+    - Hive query
+    - I have a hive query
+    - Execute hive query
+    - a
+
+- intent: firewall_request
+  examples: |
+    - Firewall request
+    - I need a firewall request
+    - Raise a firewall request
+    - b
+
+- intent: artifact
+  examples: |
+    - Artifact
+    - I have an artifact request
+    - Raise an artifact
+    - c
+    
+
+- intent: eep
+  examples: |
+    - What is EEP
+    - EEP
+    - I have a query about EEP
+    - Know about EEP
+    - d
+    
+
+- intent: hive_desktop
+  examples: |
+      - e
+      - 1
+      - desktop 
+      - I am using desktop
+      
+      
+- intent: hive_laptop
+  examples: |
+     - f
+     - 2
+     - laptop 
+     - I am using laptop
+
+- intent: git
+  examples: |
+     - git query
+     - get steps
+     - E
+
+- intent: git_laptop
+  examples: |
+     - git laptop
+     
+- intent: git
+  examples: |
+     - git query
+     - get steps
+     - E
+
+- intent: affirm
+  examples: |
+     - yes
+     - yeah
+     - yep
+     - satisfied
+     - I'm satisfied
+     - This is good
+
+- intent: deny
+  examples: |
+     - no
+     - nhh
+     - nope
+     - not satisfied
+     - I'm not satisfied
+     - This isn't helpful
+     - Not happy with this
+     
+- intent: get_employees
+  examples: |
+    - Show me all employees.
+    - List all employees.
+    - Who are the employees?
+
+- intent: get_etl_employees
+  examples: |
+    - Show me ETL employees.
+    - List all ETL employees.
+    - Who are the ETL employees?
+ 
+
+- intent: get_employee_counts
+  examples: |
+    - How many employees are there in each department?
+    - Show me the employee counts by department.
+    - What are the employee counts for each department?
+  
+
+- intent: get_datawarehouse_employees
+  examples: |
+    - Show me Datawarehouse employees.
+    - List all Datawarehouse employees.
+    - Who are the Datawarehouse employees?
+    
+- intent: nlu_fallback
+  examples: |
+    - Sorry, I don't understand.
+    - . , / , '' , & , () , % , @ , *
+    - < , > , ? , ] , |
+    - kjkjklj
+    - jhrue
+    - abhghg , bbcc ,uyuw ,zsdaw , utb
+    - hjhjuehrkfh
+    - reredgf
+    
+
+
+    
