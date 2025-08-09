@@ -1,0 +1,116 @@
+version: "3.1"
+intents:
+  - greet
+  - access_issues
+  - status
+  - ask_nse_data
+  - hive_query
+  - firewall_request
+  - artifact
+  - eep
+  - desktop
+  - laptop
+  - affirm
+  - deny
+  - goodbye
+
+
+responses:
+  utter_greet:
+    - text: "Hey! What can I help you with? Please select from the following:\nA. Access issues\nB. Status\nC. Nifty index"
+  utter_access_issues:
+    - text: "Sure! Please select an option:\na. Hive query\nb. Firewall request\nc. Artifact\nd. Employee Education Program"
+  utter_status:
+    - text: "You have selected status.To check status of a raised incident:
+       1)go to url:requestdesk.com
+       2)go to my task in the top left side 
+       3)put the query number in the search bar 
+       4)now you can see the status of raised incidents "
+
+  utter_ask_nse_data:
+    - text: "Sure, I can provide you with the latest Nifty data."
+  utter_hive_query:  
+    - text: "You selected Hive query. Which device are you using? \n1. Desktop\n2. Laptop"
+  utter_firewall_request:
+    - text: 
+        "You selected Firewall request. Steps to raise a firewall request:
+       \n1) go to the request desk using the requestdesk.com URL. 
+       \n2) login with your credentials if required 
+       \n3) go to submit a request option
+       \n4) search for firewall request
+       \n5) fill in the necessary details and click on the submit button
+       \n6) follow up regularly on raised  request "
+  utter_artifact:
+    - text: "You selected Artifact. Steps to create an artifact:
+       Steps to create an artifact:
+       \n1) Visit collaborate.com
+       \n2) Select the Project in which you want to create an artifact
+       \n3) Again select Tracker from the top menu
+       \n4) Click on the Create Artifact button 
+       \n5) Enter the necessary information 
+       \n6) After filling, in the details, click on the Save and Close button"
+  utter_eep:
+    - text: "You selected Employee Education Program.To know more about EEP:
+       \n1) Go to URL: https://hrportal.com
+       \n2) In the dashboard menu click on the HR Policies section
+       \n3) Search for ‘Employee Education Program’ 
+       \n4) You can find a document regarding this and refer to it."
+  utter_desktop:
+    - text: 
+        "Steps to execute Hive queries in Hue on Desktop:
+       \n1) Go to URL: [huecdp.com:8000](http://huecdp.com:8000) 
+       \n2) Enter login credentials
+       \n3) Enter the query you want to execute
+       \n4) Click on the Arrow Symbol to run the query
+       \n5) You can check for the results of a query in the Query History section"
+  utter_laptop:
+    - text: 
+        "Steps to execute Hive queries in Hue on Laptop:
+       \n1) Open VDI for accessing Hue using [vdi123.com](http://vdi123.com)
+       \n2) Login into VDI with credentials
+       \n3) Go to URL: [huecdp.com:8000](http://huecdp.com:8000)
+       \n4) Enter login credentials
+       \n5) Enter the query you want to execute
+       \n6) Click on the Arrow Symbol to run the query
+       \n7) You can check for the results of a query in the Query History section"
+  utter_goodbye:
+    - text: "Goodbye!"
+  utter_iamabot:
+    - text: "I am a bot, here to assist you."
+  utter_ask_anything_else:
+    - text: "Do you need help with anything else?"
+  utter_ask_satisfaction:
+    - text: "Hope you're satisfied with the response."
+  utter_suggestions:
+    - text: "If not, feel free to contact xyz person from the (department)."
+  
+
+
+
+actions:
+  - utter_greet
+  - utter_access_issues
+  - utter_status
+  - utter_hive_query
+  - utter_firewall_request
+  - utter_artifact
+  - utter_eep
+  - utter_desktop 
+  - utter_laptop
+  - utter_goodbye
+  - utter_iamabot
+  - utter_ask_anything_else
+  - utter_ask_satisfaction
+  - utter_suggestion
+  - action_scrape_nse_data
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+  
+
+
+ 
+ 
+  
